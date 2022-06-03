@@ -1,4 +1,4 @@
-﻿############################
+############################
 #   Script to 
 #   Author: DJKouza
 #   Contact:  https://twitter.com/djkouza
@@ -23,7 +23,7 @@ $fileList = Get-Content $inputList
 
 foreach($item in $fileList)
     {
-    $nameToFind = [string]$item+".png"
+    $nameToFind = [string]$item+".json"
     $fileFound = Get-ChildItem $srcDir -Recurse | Where-Object { !($_.PSIsContainer) -and $_.Name.Equals($nameToFind)}
     $fileDirecroty = $fileFound.DirectoryName
     $fileFullPath = $fileDirecroty+"\"+$nameToFind
